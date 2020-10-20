@@ -445,6 +445,18 @@
 			return 1
 	return 0
 
+/obj/item/gun/ballistic/revolver/shotgunrevolver
+	name = "\improper judge"
+	desc = "A large revolver that has been modified to fire shotgun shells."
+	icon_state = "revolvershotgun"
+	item_state = "gun"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/shotgunrevolver
+	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
+	fire_delay = 10
+	w_class = WEIGHT_CLASS_SMALL
+	weapon_weight = WEAPON_LIGHT
+	spread = 40
+
 /obj/item/gun/ballistic/revolver/needler
 	name = "needler pistol"
 	desc = "You suspect this Bringham needler pistol was once used in scientific field studies. It uses small hard-plastic hypodermic darts as ammo. "
@@ -479,12 +491,38 @@
 	fire_delay = 4
 
 /obj/item/gun/ballistic/revolver/sequoia/scoped
-	name = "hunting revolver"
+	name = "hunting revolver (standard)"
 	desc = "A scoped double action revolver chambered in 45-70."
 	icon_state = "hunting_revolver"
 	zoomable = TRUE
 	zoom_amt = 10
 	zoom_out_amt = 13
+	extra_damage = -5
+	extra_penetration = -5
+	extra_parts = list(/obj/item/prefabs/complex/bolt/simple,
+	/obj/item/prefabs/complex/action/simple,
+	/obj/item/prefabs/complex/barrel/m4570,
+	/obj/item/prefabs/complex/complexWeaponFrame/low)
+
+/obj/item/gun/ballistic/revolver/sequoia/scoped/mid
+	name = "hunting revolver (improved)"
+	extra_damage = 0
+	extra_penetration = 0
+	extra_parts = list(/obj/item/prefabs/complex/bolt/simple,
+	/obj/item/prefabs/complex/action/simple,
+	/obj/item/prefabs/complex/barrel/m4570,
+	/obj/item/prefabs/complex/complexWeaponFrame/mid)
+
+/obj/item/gun/ballistic/revolver/sequoia/scoped/high
+	name = "hunting revolver (masterwork)"
+	zoom_amt = 13
+	zoom_out_amt = 16
+	extra_damage = 7
+	extra_penetration = 7
+	extra_parts = list(/obj/item/prefabs/complex/bolt/simple,
+	/obj/item/prefabs/complex/action/simple,
+	/obj/item/prefabs/complex/barrel/m4570,
+	/obj/item/prefabs/complex/complexWeaponFrame/high)
 
 /obj/item/gun/ballistic/revolver/zipgun
 	name = "zipgun"
@@ -515,8 +553,8 @@
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/gun/ballistic/revolver/thatgun
-	name = ".556 pistol"
-	desc = "A .556 rifle modified and cut down to a pistol."
+	name = ".223 pistol"
+	desc = "A 556 rifle modified and cut down to a pistol."
 	icon_state = "thatgun"
 	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/thatgun

@@ -250,6 +250,16 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO_FOUR
 
+/datum/crafting_recipe/ecrecharge
+	name = "Small Energy Cell (recycle)"
+	result = /obj/item/stock_parts/cell/ammo/ec
+	reqs = list(/obj/item/stock_parts/cell/ammo/ec=2)
+	traits = list(TRAIT_GUNSMITH_ONE)
+	tools = list(TOOL_WORKBENCH, TOOL_GUNTIER1)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO_FOUR
+
 /datum/crafting_recipe/mfc
 	name = "Microfusion Cell"
 	result = /obj/item/stock_parts/cell/ammo/mfc
@@ -260,10 +270,30 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO_FOUR
 
+/datum/crafting_recipe/mfcrecharge
+	name = "Microfusion Cell (recycle)"
+	result = /obj/item/stock_parts/cell/ammo/mfc
+	reqs = list(/obj/item/stock_parts/cell/ammo/mfc=2)
+	traits = list(TRAIT_GUNSMITH_TWO)
+	tools = list(TOOL_WORKBENCH, TOOL_GUNTIER2)
+	time = 20
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO_FOUR
+
 /datum/crafting_recipe/ecp
 	name = "Electron Charge Pack"
 	result = /obj/item/stock_parts/cell/ammo/ecp
 	reqs = list(/obj/item/stack/crafting/goodparts=3, /obj/item/stock_parts/capacitor=5)
+	traits = list(TRAIT_GUNSMITH_THREE)
+	tools = list(TOOL_AWORKBENCH, TOOL_GUNTIER3)
+	time = 30
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO_FOUR
+
+/datum/crafting_recipe/ecprecharge
+	name = "Electron Charge Pack (recycle)"
+	result = /obj/item/stock_parts/cell/ammo/ecp
+	reqs = list(/obj/item/stock_parts/cell/ammo/ecp=2)
 	traits = list(TRAIT_GUNSMITH_THREE)
 	tools = list(TOOL_AWORKBENCH, TOOL_GUNTIER3)
 	time = 30
@@ -375,6 +405,16 @@
 	reqs = list(/obj/item/stack/sheet/metal = 2)
 	traits = list(TRAIT_GUNSMITH_TWO)
 	tools = list(TOOL_WORKBENCH, TOOL_GUNTIER2)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO_ONE
+
+/datum/crafting_recipe/pps_mag
+	name = "empty ppsh magazine (9mm)"
+	result = /obj/item/ammo_box/magazine/pps9mm/empty
+	reqs = list(/obj/item/stack/sheet/metal = 6)
+	traits = list(TRAIT_GUNSMITH_THREE)
+	tools = list(TOOL_WORKBENCH, TOOL_GUNTIER3)
 	time = 10
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO_ONE
@@ -1825,7 +1865,7 @@
 	subcategory = CAT_WEAPON
 */
 /*/datum/crafting_recipe/servicerifle
-	name = "service rifle (crude)"
+	name = "service rifle (standard)"
 	result = /obj/item/gun/ballistic/automatic/marksman/servicerifle
 	reqs = list(/obj/item/prefabs/complex/barrel/m556 = 1,
 				/obj/item/prefabs/complex/trigger = 1,
@@ -1841,7 +1881,7 @@
 	subcategory = CAT_WEAPON
 
 /datum/crafting_recipe/servicerifle/mid
-	name = "service rifle (fair)"
+	name = "service rifle (improved)"
 	result = /obj/item/gun/ballistic/automatic/marksman/servicerifle/mid
 	reqs = list(/obj/item/prefabs/complex/barrel/m556 = 1,
 				/obj/item/prefabs/complex/trigger = 1,
@@ -2223,6 +2263,17 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO_FIVE
 
+/datum/crafting_recipe/miniguncharge
+	name = "Recharge Minigun Ammo"
+	result = /obj/item/minigunpackbal
+	time = 30
+	reqs = list(/obj/item/minigunpackbal = 1,
+				/obj/item/stack/sheet/metal = 20,
+				/datum/reagent/blackpowder = 120)
+	tools = list(TOOL_WORKBENCH)
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO_FIVE
+
 /datum/crafting_recipe/voodoo
     name = "Voodoo"
     result = /obj/item/reagent_containers/pill/patch/voodoo
@@ -2408,6 +2459,15 @@
 				/obj/item/wirecutters = 1,
 				/obj/item/stack/sheet/metal = 50)
 	time = 400
+	category = CAT_ASSEM
+	subcategory = CAT_MACHINES
+
+/datum/crafting_recipe/fbench
+	name = "Moulding bench"
+	result = /obj/machinery/workbench/fbench
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 10,
+				/obj/item/stack/sheet/metal = 20)
+	time = 200
 	category = CAT_ASSEM
 	subcategory = CAT_MACHINES
 
@@ -3206,7 +3266,7 @@
 	subcategory = CAT_BPWEAPON_ONEUSE
 
 //uzi
-
+/*
 /datum/crafting_recipe/uzi
 	name = "Mini uzi"
 	result = /obj/item/gun/ballistic/automatic/mini_uzi
@@ -3231,9 +3291,9 @@
 	time = 120
 	category = CAT_BLUEPRINTS
 	subcategory = CAT_BPWEAPON_ONEUSE
-
+*/
 //10mm smg
-
+/*
 /datum/crafting_recipe/smg10mm
 	name = "10mm SMG"
 	result = /obj/item/gun/ballistic/automatic/smg10mm
@@ -3258,9 +3318,9 @@
 	time = 120
 	category = CAT_BLUEPRINTS
 	subcategory = CAT_BPWEAPON_ONEUSE
-
+*/
 //grease gun
-
+/*
 /datum/crafting_recipe/grease_gun
 	name = "Grease gun"
 	result = /obj/item/gun/ballistic/automatic/greasegun
@@ -3285,7 +3345,7 @@
 	time = 120
 	category = CAT_BLUEPRINTS
 	subcategory = CAT_BPWEAPON_ONEUSE
-
+*/
 //marksman rifle
 
 /datum/crafting_recipe/marksmanrifle
@@ -3319,7 +3379,7 @@
 
 /datum/crafting_recipe/brush
 	name = "Brush gun"
-	result = /obj/item/gun/ballistic/automatic/marksman
+	result = /obj/item/gun/ballistic/shotgun/automatic/hunting/brush
 	reqs = list(/obj/item/stack/sheet/metal = 10,
 				/obj/item/advanced_crafting_components/assembly = 1,
 				/datum/reagent/blackpowder = 30,
@@ -3332,7 +3392,7 @@
 
 /datum/crafting_recipe/brush_lim
 	name = "Brush gun"
-	result = /obj/item/gun/ballistic/automatic/marksman
+	result = /obj/item/gun/ballistic/shotgun/automatic/hunting/brush
 	reqs = list(/obj/item/stack/sheet/metal = 10,
 				/obj/item/advanced_crafting_components/assembly = 1,
 				/datum/reagent/blackpowder = 30,
@@ -3347,7 +3407,7 @@
 //high tier
 
 //r91
-
+/*
 /datum/crafting_recipe/r91
 	name = "R91 assault rifle"
 	result = /obj/item/gun/ballistic/automatic/assault_rifle
@@ -3377,7 +3437,7 @@
 	time = 120
 	category = CAT_BLUEPRINTS
 	subcategory = CAT_BPWEAPON_ONEUSE
-
+*/
 //lmg
 
 /datum/crafting_recipe/lmg
@@ -3701,7 +3761,7 @@
 	subcategory = CAT_BPWEAPON_ONEUSE
 
 //rangemaster
-
+/*
 /datum/crafting_recipe/rangemaster
 	name = "Colt Rangemaster"
 	result = /obj/item/gun/ballistic/automatic/rangemaster
@@ -3732,7 +3792,7 @@
 	time = 120
 	category = CAT_BLUEPRINTS
 	subcategory = CAT_BPWEAPON_ONEUSE
-
+*/
 //bozar
 /datum/crafting_recipe/bozar
 	name = "Bozar"
@@ -3894,9 +3954,45 @@
 	category = CAT_MOULD
 	subcategory = CAT_MOULD_ONE
 
-/datum/crafting_recipe/mould/simpleaction
+/datum/crafting_recipe/mould/mm9barrel
 	result = /obj/item/prefabs/mould/barrel/mm9
 	name = "9mm Barrel Mould"
+	tools = list(TOOL_FORGE, TOOL_GUNTIER1)
+	traits = list(TRAIT_GUNSMITH_ONE)
+	time = 30
+	category = CAT_MOULD
+	subcategory = CAT_MOULD_ONE
+
+/datum/crafting_recipe/mould/mm10barrel
+	result = /obj/item/prefabs/mould/barrel/mm10
+	name = "10mm Barrel Mould"
+	tools = list(TOOL_FORGE, TOOL_GUNTIER2)
+	traits = list(TRAIT_GUNSMITH_TWO)
+	time = 30
+	category = CAT_MOULD
+	subcategory = CAT_MOULD_ONE
+
+/datum/crafting_recipe/mould/m44barrel
+	result = /obj/item/prefabs/mould/barrel/m44
+	name = ".44 Barrel Mould"
+	tools = list(TOOL_FORGE, TOOL_GUNTIER2)
+	traits = list(TRAIT_GUNSMITH_TWO)
+	time = 30
+	category = CAT_MOULD
+	subcategory = CAT_MOULD_ONE
+
+/datum/crafting_recipe/mould/m357barrel
+	result = /obj/item/prefabs/mould/barrel/m357
+	name = ".357 Barrel Mould"
+	tools = list(TOOL_FORGE, TOOL_GUNTIER1)
+	traits = list(TRAIT_GUNSMITH_ONE)
+	time = 30
+	category = CAT_MOULD
+	subcategory = CAT_MOULD_ONE
+
+/datum/crafting_recipe/mould/m45barrel
+	result = /obj/item/prefabs/mould/barrel/m45
+	name = ".45 Barrel Mould"
 	tools = list(TOOL_FORGE, TOOL_GUNTIER1)
 	traits = list(TRAIT_GUNSMITH_ONE)
 	time = 30
@@ -3920,7 +4016,7 @@
 	time = 30
 	category = CAT_MOULD
 	subcategory = CAT_MOULD_ONE
-
+/*
 /datum/crafting_recipe/mould/boltadvanced
 	result = /obj/item/prefabs/mould/bolt/high
 	name = "Advanced Bolt Mould"
@@ -3929,7 +4025,7 @@
 	time = 30
 	category = CAT_MOULD
 	subcategory = CAT_MOULD_ONE
-
+*/
 /datum/crafting_recipe/mould/trigger
 	result = /obj/item/prefabs/mould/trigger
 	name = "Trigger Mould"
